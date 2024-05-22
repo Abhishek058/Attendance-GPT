@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import SERVER_URI from "../../config";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,13 +13,13 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("https://attendance-gpt.onrender.com/login", {
+      const res = await axios.post(`${SERVER_URI}/login`, {
         email,
         password,
       });
 
       if (res.data === "exist") {
-        localStorage.setItem("user", JSON.stringify(email)); // Store user in local storage
+        localStorage.setItem("user", JSON.stringify(email));
         navigate("/", { state: { id: email } });
       } else if (res.data === "notexist") {
         alert("User not found");
