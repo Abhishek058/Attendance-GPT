@@ -1,0 +1,9 @@
+{
+    "redirects": [
+      {
+        "source": "src/assets/:filePath",
+        "destination": "src/assets/:filePath",
+        "permanent": true
+      }
+    ]
+  }
