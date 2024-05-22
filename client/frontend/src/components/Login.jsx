@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:8000/", {
+      const res = await axios.post("https://attendance-gpt.onrender.com/login", {
         email,
         password,
       });

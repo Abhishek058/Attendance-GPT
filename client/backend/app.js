@@ -10,9 +10,9 @@ app.get("/", (req, res) => {
   res.send("Server is running");
 });
 
-app.get("/", cors(), (req, res) => {});
+app.get("/login", cors(), (req, res) => {});
 
-app.post("/", async (req, res) => {
+app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {

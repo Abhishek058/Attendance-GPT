@@ -13,7 +13,7 @@ const Signup = () => {
 
     try {
       await axios
-        .post("http://localhost:8000/signup", {
+        .post("https://attendance-gpt.onrender.com/signup", {
           email,
           password,
         })
