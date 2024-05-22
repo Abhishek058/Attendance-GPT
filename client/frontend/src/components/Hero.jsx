@@ -4,27 +4,15 @@ import { Link } from "react-router-dom";
 import { recognizeAndMarkAttendance } from "../api";
 
 const Hero = () => {
-  const [message, setMessage] = React.useState("");
-
   const handleRecognize = async () => {
     try {
       const response = await recognizeAndMarkAttendance();
-      console.log(response);
-      setMessage("Recognized and marked attendance.");
     } catch (error) {
       console.error(error);
     }
   };
   return (
     <>
-      {message && (
-        <div
-          className="fixed inset-x-0 top-0 z-50 flex items-center justify-center h-12 bg-green-500 text-white"
-          onClick={() => setMessage("")}
-        >
-          {message}
-        </div>
-      )}
       <div className="relative isolate z-0 bg-white px-6 lg:px-8">
         <div className="relative mx-auto max-w-2xl py-24">
           <div className="absolute inset-x-0 -top-[4rem] -z-10 transform-gpu overflow-hidden blur-3xl md:-top-[10rem]">

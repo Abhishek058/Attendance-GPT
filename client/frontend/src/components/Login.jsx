@@ -27,6 +27,8 @@ const Login = () => {
       alert("Wrong details");
       console.log(error);
     }
+
+    window.location.reload();
   }
 
   return (
