@@ -16,18 +16,15 @@ app.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const check = await collection.findOne({
-      email: email,
-      password: password,
-    });
+    const check = await collection.findOne({ email, password });
 
     if (check) {
-      res.json("exist");
+      return res.json("exist");
     } else {
-      res.json("notexist");
+      return res.json("notexist");
     }
   } catch (e) {
-    res.json("fail");
+    return res.json("fail");
   }
 });
 
@@ -43,13 +40,14 @@ app.post("/signup", async (req, res) => {
     const check = await collection.findOne({ email: email });
 
     if (check) {
-      res.json("exist");
+      return res.json("exist");
     } else {
-      res.json("notexist");
       await collection.insertMany([data]);
+      return res.json("notexist");
     }
   } catch (e) {
-    res.json("fail");
+    console.log(e);
+    return res.json("fail");
   }
 });
 
