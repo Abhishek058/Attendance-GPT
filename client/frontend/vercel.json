@@ -1,9 +1,9 @@
 {
-    "redirects": [
-      {
-        "source": "/src/assets/:filePath",
-        "destination": "/src/assets/:filePath",
-        "permanent": true
-      }
-    ]
-  }
+  "redirects": [
+    {
+      "source": "src/assets/aadarsh-att.png",
+      "destination": "/assets/aadarsh-att.png",
+      "permanent": true
+    }
+  ]
+}
